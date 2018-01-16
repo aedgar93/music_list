@@ -1,3 +1,22 @@
-<div>
-    {{info.title}}
+<div class="music-item">
+    <div class="cover-image">
+        <img src="{{info.smallThumb.url}}" />
+        <span class="album-name">{{info.title}}</span>
+        <span class="artist-name">{{info.artist.name}}</span>
+    </div>
+    <div class="details">
+        <div>
+            Difficulty 
+            <div class="info">{{info.difficulty}}</div>
+        </div>
+        <div>
+            Genre
+            <div class="info">{{info.genre}}</div>
+        </div>
+        <div>
+            Length
+            <!-- TODO: change class info to something better and format total time using a filter-->
+            <div class="info">{{info.metaData.totalTime}}</div>
+        </div>
+    </div>
 </div>
