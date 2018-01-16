@@ -12,7 +12,10 @@ angular.module('musicBrowsing').factory('musicItemsService', ['$http', function(
          */
         getItems: function(success, error) {
             $http.get('/assets/songData.json').then(function(result) {
-                //TODO: add some checks on result
+                //convert createdAt to date so we can sort on it properly
+                angular.forEach(result.data, function(data) {
+                    data.createdAt = new Date(data.createdAt);
+                });
                 success(result.data)
             }, error);    
         }

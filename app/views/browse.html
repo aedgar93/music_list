@@ -1,11 +1,14 @@
 <div ng-controller="browseCtrl">
     <div class="browse-head">
         <!-- TODO: search bar -->
-        <!-- TODO: sort -->
+       <div class="sort">
+           sorted by <a class="selected-sort" ng-href="/filter">{{currentFilter.displayText}}</a>
+           <img src="assets/images/dropdown_arrow.png" />
+       </div>
     </div>
     <div class="music-container">
         {{musicItems[1].keys()}}
-        <music-item ng-repeat="item in musicItems" info="item"></music-item>
+        <music-item ng-repeat="item in musicItems | orderBy:currentFilter.key:currentFilter.reverse" info="item"></music-item>
         <div ng-if="loading">Loading, please wait</div>
         <div ng-if="musicItems.length == 0 && !loading">There is nothing here right now</div>
     </div>

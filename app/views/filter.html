@@ -1,0 +1,11 @@
+<div ng-controller="filterCtrl">
+    <ul class="menu-list">
+        <li ng-repeat="filter in filters"  ng-class="{selected : isSelected(filter)}" ng-click="updateFilter(filter)">
+            <img ng-if="isSelected(filter)" ng-src="assets/images/right_arrow_icon.png" class="icon"/>
+            <span>{{filter.displayText}}</span>
+        </li>
+    </ul>
+    <div class="close">
+        <img class="icon" src="assets/images/close_icon.png" ng-click="close()"/>
+    </div>
+</div>

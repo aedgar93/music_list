@@ -1,6 +1,6 @@
 <div class="music-item">
     <div class="cover-image">
-        <img src="{{info.smallThumb.url}}" onerror="this.src='assets/images/error.png'"/>
+        <img ng-src="{{info.smallThumb.url}}" onerror="this.src='assets/images/error.png'"/>
         <span class="artist-name">{{info.artist.name}}</span> <!-- TODO: artist or album?? -->
         <span class="song-name">{{info.title}}</span>
     </div>

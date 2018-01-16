@@ -11,7 +11,11 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   {
     templateUrl: 'views/browse.html'
   })
-  .otherwise({redirectTo: '/browse'}); //Right now we only have /browse, so always redirect there
+  .when('/filter',
+  {
+    templateUrl: 'views/filter.html'
+  })
+  .otherwise({redirectTo: '/browse'});
 }]).
 filter('secondsToTime', ['$filter', function($filter) { //Convert seconds to m:ss
   return function(seconds) {

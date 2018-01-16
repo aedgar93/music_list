@@ -4,7 +4,7 @@ body {
 }
 
 @img-size: 300px;
-@detail-size: 100px;
+@detail-size: 75px;
 @spacing: 18px;
 
 .music-container {
@@ -13,6 +13,23 @@ body {
     justify-content: center;
 }
 
+//Items displayed on /browse
+.browse-head {
+    height: 50px;
+    margin-bottom: @spacing;
+
+    .sort {
+        float: right;
+        img {
+            width: 20px;
+        }
+
+        a {
+            .anchor-override;
+            font-weight: bold;
+        }
+    }
+}
 .music-item {
     height: @img-size + @detail-size;
     width: @img-size;
@@ -26,8 +43,13 @@ body {
         position: relative;
     }
 
+    .cover-image {
+        .gradient-overlay;
+    }
+
     .artist-name, .song-name {
-        //color: white;
+        color: white;
+        z-index: 3; //place in front of gradient overlay
         position: absolute;
         left: @spacing;
         right: @spacing;
@@ -66,10 +88,72 @@ body {
 }
 
 
+// /filter page and general menu items that could be reused in future menus
+@menu-item-size: 26px;
+.menu-list {
+    list-style: none;
+    float: left;
+}
+
+.menu-list li, .selected-sort {
+    font-size: @menu-item-size;
+    cursor: pointer;
+    height: 30px;
+    opacity: .7;
+
+    &.selected {
+        opacity: 1;
+        font-weight: bold;
+    }
+}
+
+.menu-list li {
+    margin-bottom: 5px;
+}
+
+.icon {
+    display: inline-block;
+    height: @menu-item-size;
+    vertical-align: text-top;
+}
+
+.close {
+    cursor: pointer;
+    float: right;
+}
+
+
 //Truncate text overflow with ...
 .truncate-text {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+
+//Overlay a gradient from white to black
+.gradient-overlay {
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(transparent 30%,black);
+        opacity: .4; 
+        z-index: 2;
+    }
+}
+
+
+//Override browser default anchor styles
+.anchor-override {
+    color: black;
+    text-decoration: none;
+    &:hover, &:active, &:focus, &:visited {
+        //Usually I would have a different color for the hover and active states
+        color: black;
+    }
 }
 //TODO: make everything smaller on mobile
