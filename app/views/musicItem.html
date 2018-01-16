@@ -1,22 +1,22 @@
 <div class="music-item">
     <div class="cover-image">
-        <img src="{{info.smallThumb.url}}" />
-        <span class="album-name">{{info.title}}</span>
-        <span class="artist-name">{{info.artist.name}}</span>
+        <img src="{{info.smallThumb.url}}" onerror="this.src='assets/images/error.png'"/>
+        <span class="artist-name">{{info.artist.name}}</span> <!-- TODO: artist or album?? -->
+        <span class="song-name">{{info.title}}</span>
     </div>
     <div class="details">
-        <div>
+        <div class="column">
             Difficulty 
-            <div class="info">{{info.difficulty}}</div>
+            <div class="stat">{{info.difficulty ? info.difficulty : "?"}}</div>
         </div>
-        <div>
+        <div class="column">
             Genre
-            <div class="info">{{info.genre}}</div>
+            <div class="stat">{{info.genre ? info.genre : "?"}}</div>
         </div>
-        <div>
+        <div class="column">
             Length
-            <!-- TODO: change class info to something better and format total time using a filter-->
-            <div class="info">{{info.metaData.totalTime}}</div>
+            <div class="stat" ng-if="info.metaData.totalTime">{{info.metaData.totalTime | secondsToTime}}</div>
+            <div class="stat" ng-if="!info.metaData.totalTime">?</div>
         </div>
     </div>
 </div>
