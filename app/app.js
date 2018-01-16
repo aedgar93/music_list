@@ -7,5 +7,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $locationProvider.hashPrefix('!'); //default value
   $locationProvider.html5Mode(true);
 
-  $routeProvider.otherwise({redirectTo: '/browse'}); //Right now we only have /browse, so always redirect there
+  $routeProvider.when('/browse', 
+  {
+    templateUrl: 'views/browse.html'
+  })
+  .otherwise({redirectTo: '/browse'}); //Right now we only have /browse, so always redirect there
 }]);
