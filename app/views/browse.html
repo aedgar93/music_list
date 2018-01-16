@@ -1,6 +1,10 @@
 <div ng-controller="browseCtrl">
     <div class="browse-head">
-        <!-- TODO: search bar -->
+        <div class="search">
+            <!-- in the future I might move this to a directive so it can be reused -->
+            <!-- TODO: get search icon and put it here -->
+            <input name="search" placeholder="Search" ng-model="search.title" />
+        </div>
        <div class="sort">
            sorted by <a class="selected-sort" ng-href="/filter">{{currentFilter.displayText}}</a>
            <img src="assets/images/dropdown_arrow.png" />
@@ -8,7 +12,7 @@
     </div>
     <div class="music-container">
         {{musicItems[1].keys()}}
-        <music-item ng-repeat="item in musicItems | orderBy:currentFilter.key:currentFilter.reverse" info="item"></music-item>
+        <music-item ng-repeat="item in musicItems | orderBy:currentFilter.key:currentFilter.reverse | filter:search" info="item"></music-item>
         <div ng-if="loading">Loading, please wait</div>
         <div ng-if="musicItems.length == 0 && !loading">There is nothing here right now</div>
     </div>
