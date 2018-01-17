@@ -1,3 +1,168 @@
 body {
   background: #F0F0F0;
+  padding: 10px;
+}
+.music-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.browse-head {
+  height: 50px;
+  margin-bottom: 18px;
+}
+.browse-head .sort {
+  float: right;
+  padding-top: 10px;
+  width: 170px;
+}
+.browse-head .sort img {
+  width: 20px;
+}
+.browse-head .sort a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.browse-head .sort a:hover,
+.browse-head .sort a:active,
+.browse-head .sort a:focus,
+.browse-head .sort a:visited {
+  color: black;
+}
+.browse-head .search {
+  width: 50%;
+  height: 50px;
+  float: left;
+}
+.browse-head .search input {
+  border: 2px solid #E3E2E7;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  padding: 10px;
+  font-size: 26px;
+}
+.browse-head .search input::-webkit-input-placeholder,
+.browse-head .search input::-moz-placeholder,
+.browse-head .search input:-ms-input-placeholder {
+  color: #E3E2E7;
+}
+.music-item {
+  height: 375px;
+  width: 300px;
+  background: white;
+  display: inline-block;
+  margin: 0 10px 18px 10px;
+}
+.music-item .cover-image,
+.music-item img {
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+.music-item .cover-image:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(transparent 30%, black);
+  opacity: .4;
+  z-index: 2;
+}
+.music-item .artist-name,
+.music-item .song-name {
+  color: white;
+  z-index: 3;
+  position: absolute;
+  left: 18px;
+  right: 18px;
+}
+.music-item .artist-name {
+  font-size: 14px;
+  opacity: .7;
+  bottom: 50px;
+  height: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.music-item .song-name {
+  font-size: 24px;
+  bottom: 20px;
+  height: 28px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.music-item .details {
+  height: 39px;
+  padding: 18px;
+}
+.music-item .details .column {
+  width: 32%;
+  display: inline-block;
+}
+.music-item .details .column .stat {
+  opacity: .7;
+  height: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu-list {
+  list-style: none;
+  float: left;
+}
+.menu-list li,
+.selected-sort {
+  font-size: 26px;
+  cursor: pointer;
+  height: 30px;
+  opacity: .7;
+}
+.menu-list li.selected,
+.selected-sort.selected {
+  opacity: 1;
+  font-weight: bold;
+}
+.menu-list li {
+  margin-bottom: 5px;
+}
+.icon {
+  display: inline-block;
+  height: 26px;
+  vertical-align: text-top;
+}
+.close {
+  cursor: pointer;
+  float: right;
+}
+.truncate-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.gradient-overlay:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(transparent 30%, black);
+  opacity: .4;
+  z-index: 2;
+}
+.anchor-override {
+  color: black;
+  text-decoration: none;
+}
+.anchor-override:hover,
+.anchor-override:active,
+.anchor-override:focus,
+.anchor-override:visited {
+  color: black;
 }
