@@ -166,3 +166,8 @@ body {
 .anchor-override:visited {
   color: black;
 }
+@media (max-width: 400px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
