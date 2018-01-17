@@ -5,7 +5,6 @@ angular.module('musicBrowsing', [
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!'); //default value
-  $locationProvider.html5Mode(true);
 
   $routeProvider.when('/browse', 
   {

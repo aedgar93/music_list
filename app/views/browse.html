@@ -1,12 +1,12 @@
 <div ng-controller="browseCtrl">
     <div class="browse-head">
-        <div class="search">
+        <div class="search hide-on-mobile">
             <!-- in the future I might move this to a directive so it can be reused -->
             <!-- TODO: get search icon and put it here -->
             <input name="search" placeholder="Search" ng-model="search.title" />
         </div>
        <div class="sort">
-           sorted by <a class="selected-sort" ng-href="/filter">{{currentFilter.displayText}}</a>
+           sorted by <a class="selected-sort" ng-href="/#!/filter">{{currentFilter.displayText}}</a>
            <img src="assets/images/dropdown_arrow.png" />
        </div>
     </div>
